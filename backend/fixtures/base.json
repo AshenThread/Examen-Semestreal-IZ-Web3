@@ -1,0 +1,69 @@
+{
+  "criaturas": [
+    {
+      "_id": "65a000000000000000000101",
+      "nombre": "La Ardilla del Martes",
+      "tipo": "elemental",
+      "nivelPeligro": 2,
+      "habilidades": [
+        "aparece los martes"
+      ],
+      "estado": "activa"
+    },
+    {
+      "_id": "65a000000000000000000102",
+      "nombre": "El Dragón del Estacionamiento",
+      "tipo": "mitica",
+      "nivelPeligro": 8,
+      "habilidades": [
+        "escupe fuego"
+      ],
+      "estado": "activa"
+    },
+    {
+      "_id": "65a000000000000000000103",
+      "nombre": "El Brillo del Río Wamapo",
+      "tipo": "espectral",
+      "nivelPeligro": 6,
+      "habilidades": [
+        "brilla",
+        "flota"
+      ],
+      "estado": "activa"
+    }
+  ],
+  "avistamientos": [
+    {
+      "_id": "65a000000000000000000201",
+      "criatura": "65a000000000000000000101",
+      "testigo": "Leslie Yepp",
+      "ubicacion": "Parque Ramsett",
+      "fecha": "2026-10-01T12:00:00.000Z",
+      "descripcion": "Dato ficticio de examen"
+    },
+    {
+      "_id": "65a000000000000000000202",
+      "criatura": "65a000000000000000000101",
+      "testigo": "Ron Swandson",
+      "ubicacion": "Parque Ramsett",
+      "fecha": "2026-10-02T12:00:00.000Z",
+      "descripcion": "Dato ficticio de examen"
+    },
+    {
+      "_id": "65a000000000000000000203",
+      "criatura": "65a000000000000000000102",
+      "testigo": "Tom Haverford",
+      "ubicacion": "Estacionamiento",
+      "fecha": "2026-10-03T12:00:00.000Z",
+      "descripcion": "Dato ficticio de examen"
+    },
+    {
+      "_id": "65a000000000000000000204",
+      "criatura": "65a000000000000000000103",
+      "testigo": "April Ludgate",
+      "ubicacion": "Ribera",
+      "fecha": "2026-10-04T12:00:00.000Z",
+      "descripcion": "Dato ficticio de examen"
+    }
+  ]
+}

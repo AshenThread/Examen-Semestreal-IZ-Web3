@@ -1,0 +1,12 @@
+{
+  "name": "pawnee-examen",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "check": "npm run check --prefix backend && npm run check --prefix frontend",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend"
+  }
+}
