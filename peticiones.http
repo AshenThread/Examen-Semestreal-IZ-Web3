@@ -1,0 +1,46 @@
+# Cliente HTTP compatible o adaptar a Postman/curl. Solo tu backend local.
+@base = http://127.0.0.1:3000
+@criatura = 65a000000000000000000101
+@avistamiento = 65a000000000000000000201
+
+### Salud
+GET {{base}}/api/salud
+
+### Criaturas
+GET {{base}}/api/criaturas
+
+### Tipo
+GET {{base}}/api/criaturas?tipo=mitica
+
+### Avistamientos
+GET {{base}}/api/avistamientos
+
+### Detalle
+GET {{base}}/api/avistamientos/{{avistamiento}}
+
+### Por criatura
+GET {{base}}/api/avistamientos?criaturaId={{criatura}}
+
+### Actualización válida
+PUT {{base}}/api/criaturas/{{criatura}}
+Content-Type: application/json
+
+{"tipo": "mitica"}
+
+### Valor inválido (puede ser aceptado antes de corregir)
+PUT {{base}}/api/criaturas/{{criatura}}
+Content-Type: application/json
+
+{"tipo": "fantasma"}
+
+### Confirmar persistencia
+GET {{base}}/api/criaturas/{{criatura}}
+
+### Referencia inexistente
+POST {{base}}/api/avistamientos
+Content-Type: application/json
+
+{"criatura": "65afffffffffffffffffffff", "testigo": "Prueba", "ubicacion": "Prueba", "fecha": "2026-10-20"}
+
+### Id mal formado
+GET {{base}}/api/criaturas/abc
