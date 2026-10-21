@@ -61,4 +61,20 @@ indicar la solicitud sin secretos, qué decisión tomó la persona estudiante y 
 se verificó el resultado. La auditoría debe distinguir claramente entre una
 recomendación de la IA y una corrección realmente implementada y comprobada.
 
+### Skill personalizada para el examen
+
+- **Solicitud:** se pidió crear una skill o agente personalizado que recuerde
+  actualizar ramas de trabajo, reportes, evidencias y requisitos de entrega.
+- **Decisión técnica:** se creó la skill de proyecto
+  `.github/skills/examen-pawnee/SKILL.md`, invocable como `/examen-pawnee`.
+  Se eligió una skill porque el examen requiere un flujo repetible bajo demanda,
+  no una personalidad permanente para todas las tareas.
+- **Alcance:** la skill guía diagnóstico, correcciones, pruebas, auditoría,
+  uso de IA, GitHub y D2L; exige proteger secretos y no presentar como resuelto
+  ningún reporte sin evidencia comprobable.
+- **Verificación:** se revisó el formato requerido de `SKILL.md`, incluido el
+  `name`, `description` y frontmatter YAML. La validación funcional pendiente es
+  invocarla en la siguiente tarea del examen y confirmar que se actualicen los
+  documentos y la rama correcta.
+
 No se exige rechazar una sugerencia si todas fueron útiles, ni entregar conversaciones completas. No usar IA no reduce puntaje.
