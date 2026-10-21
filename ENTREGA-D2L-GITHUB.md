@@ -50,18 +50,18 @@ La evaluación usa ese commit y esa copia recibida, no ediciones posteriores. Si
 ## Checklist final
 
 ```text
-[ ] backend/.env no está versionado
-[ ] package-lock.json de raíz, backend y frontend están incluidos
-[ ] AUDITORIA.md tiene B-01, B-02, B-03 y B-04 completos
-[ ] PRUEBAS-MANUALES.md refleja las pruebas realizadas
-[ ] USO-IA.md está actualizado
-[ ] evidencias/ contiene capturas o respuestas sin secretos
-[ ] npm run check pasa
-[ ] npm run build pasa
-[ ] git status no muestra cambios
-[ ] se hizo push de la rama correcta
-[ ] el ZIP se creó desde ese mismo HEAD
-[ ] D2L contiene ZIP, código, versión, URL, rama y SHA completo
+[X] backend/.env no está versionado
+[X] package-lock.json de raíz, backend y frontend están incluidos
+[X] AUDITORIA.md tiene B-01, B-02, B-03 y B-04 completos
+[X] PRUEBAS-MANUALES.md refleja las pruebas realizadas
+[X] USO-IA.md está actualizado
+[X] evidencias/ contiene capturas o respuestas sin secretos
+[X] npm run check pasa
+[X] npm run build pasa
+[X] git status no muestra cambios
+[X] se hizo push de la rama correcta
+[X] el ZIP se creó desde ese mismo HEAD
+[X] D2L contiene ZIP, código, versión, URL, rama y SHA completo
 ```
 
 ## Guía visual rápida
