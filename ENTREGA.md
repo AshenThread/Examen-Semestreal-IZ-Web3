@@ -1,7 +1,7 @@
 # Identificación
-Código: ___
+Código: 330423
 Versión: B
-Repositorio público propio: ___
+Repositorio público propio: 
 Rama: ___
 Incidencias resueltas/parciales: ___
 

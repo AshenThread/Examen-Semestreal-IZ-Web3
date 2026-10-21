@@ -1,7 +1,7 @@
 # Auditoría · Versión B
 Código: ___
-Repositorio público propio: ___
-Rama: ___
+Repositorio público propio: https://github.com/AshenThread/Examen-Semestreal-IZ-Web3.git 
+Rama: 
 
 ## B-01 · No se guarda la edición del avistamiento
 ### Síntoma
