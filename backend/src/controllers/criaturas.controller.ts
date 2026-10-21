@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import * as servicio from '../services/criaturas.service';
+import { listar as listarAvistamientos } from '../services/avistamientos.service';
 import { queryTexto } from '../validacion';
 /** Traducción HTTP; las consultas y reglas viven en servicios. */
 export async function listar(req: Request, res: Response, next: NextFunction) {
@@ -21,8 +22,7 @@ export async function eliminar(req: Request, res: Response, next: NextFunction) 
 export async function avistamientos(req: Request, res: Response, next: NextFunction) {
   try {
     await servicio.obtener(req.params.id);
-    const { listar } = await import('../services/avistamientos.service');
-    const datos = await listar(req.params.id);
+    const datos = await listarAvistamientos(req.params.id);
     res.json({ avistamientos: datos, total: datos.length, requestId: req.id });
   } catch(e) { next(e); }
 }

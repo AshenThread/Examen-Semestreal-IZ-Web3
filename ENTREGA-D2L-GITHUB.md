@@ -46,3 +46,50 @@ Antes del ZIP, inspeccionar también contenido, capturas y logs.
 Adjuntar ZIP y escribir: código, versión B, URL pública propia, rama y SHA COMPLETO. El ZIP incluye AUDITORIA.md, USO-IA.md, ENTREGA.md y evidencias, además del código. No basta el enlace.
 El SHA va en el texto de D2L; no hay que escribir en un archivo versionado el hash del mismo commit que contiene ese archivo.
 La evaluación usa ese commit y esa copia recibida, no ediciones posteriores. Si D2L/GitHub presenta falla externa, avisar antes del cierre para que el docente aplique el protocolo institucional; no se cambia unilateralmente la fecha.
+
+## Checklist final
+
+```text
+[ ] backend/.env no está versionado
+[ ] package-lock.json de raíz, backend y frontend están incluidos
+[ ] AUDITORIA.md tiene B-01, B-02, B-03 y B-04 completos
+[ ] PRUEBAS-MANUALES.md refleja las pruebas realizadas
+[ ] USO-IA.md está actualizado
+[ ] evidencias/ contiene capturas o respuestas sin secretos
+[ ] npm run check pasa
+[ ] npm run build pasa
+[ ] git status no muestra cambios
+[ ] se hizo push de la rama correcta
+[ ] el ZIP se creó desde ese mismo HEAD
+[ ] D2L contiene ZIP, código, versión, URL, rama y SHA completo
+```
+
+## Guía visual rápida
+
+```text
+Código listo
+    |
+    v
+check + build
+    |
+    v
+auditoría + pruebas + evidencias
+    |
+    v
+commit
+    |
+    v
+push
+    |
+    v
+git status limpio
+    |
+    v
+node scripts/entrega.mjs CODIGO
+    |
+    v
+subir ZIP y copiar SHA completo en D2L
+```
+
+Si un cuadro falla, no continúes al siguiente: corrige, vuelve a validar y
+genera el ZIP únicamente después del commit final.

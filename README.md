@@ -35,3 +35,71 @@ No publicar la API a internet: la práctica no implementa autenticación HTTP.
 - scripts/entrega.mjs: ZIP versionado y manifiesto para D2L; no publica ni hace commits.
 
 No hay CSS que rediseñar. Lee ENUNCIADO.md, REPORTES.md y PRUEBAS-MANUALES.md al iniciar. Cada reporte puede investigarse por separado con los datos iniciales.
+
+## Estado de esta entrega
+
+Esta rama documenta y verifica las cuatro incidencias:
+
+- B-01: edición de avistamientos.
+- B-02: nombre de la criatura en el detalle del avistamiento.
+- B-03: rechazo de tipos de criatura inválidos.
+- B-04: actualización automática del filtro de avistamientos.
+
+El README específico del backend está en backend/README.md.
+
+## Guía visual de trabajo y entrega
+
+```text
+┌──────────────────────────────┐
+│ 1. Revisar cambios            │
+│ git status / git diff         │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 2. Validar código             │
+│ npm run check                 │
+│ npm run build                 │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 3. Probar los 4 reportes      │
+│ AUDITORIA.md                  │
+│ PRUEBAS-MANUALES.md           │
+│ evidencias/                   │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 4. Documentar uso de IA      │
+│ USO-IA.md                     │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 5. Commit y push              │
+│ git add / commit / push       │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 6. Árbol limpio               │
+│ git status                    │
+│ debe quedar sin cambios       │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 7. Crear ZIP del mismo HEAD  │
+│ node scripts/entrega.mjs     │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 8. Subir a D2L                │
+│ ZIP + URL + rama + SHA        │
+└──────────────────────────────┘
+```
+
+Para el procedimiento completo, consulta ENTREGA-D2L-GITHUB.md.

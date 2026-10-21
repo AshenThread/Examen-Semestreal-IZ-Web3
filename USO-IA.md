@@ -145,3 +145,18 @@ No se exige rechazar una sugerencia si todas fueron útiles, ni entregar convers
   actualizaciones parciales.
 - **Verificación:** un tipo permitido como `mitica` conserva la respuesta 200;
   `fantasma` recibe 400 y un GET posterior conserva el último tipo válido.
+
+### Corrección guiada de B-04
+
+- **Solicitud:** se pidió corregir el filtro de avistamientos, porque cambiar
+  la criatura seleccionada no actualizaba la lista hasta pulsar un botón
+  manual.
+- **Diagnóstico:** en ListaAvistamientos.tsx, el efecto que consulta los datos
+  dependía del contador recarga y no de criaturaId. El cambio del selector
+  solo actualizaba el estado visual, no iniciaba una nueva petición.
+- **Decisión técnica:** la consulta ahora depende de criaturaId. Se eliminó la
+  actualización manual, se conserva la consulta completa al elegir Todas y se
+  separó el error de carga del selector del error de carga de la lista.
+- **Verificación:** el frontend pasó npm run check y npm run build. La
+  auditoría y las pruebas manuales registran el cambio de filtro, la
+  restauración de Todas y los estados de loading, error y sin resultados.

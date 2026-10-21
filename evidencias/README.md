@@ -14,6 +14,14 @@ Gris: General e Installs
 
 4. Se hizo un cambio pequeño con IA de una funcion que iba a ser decapritada en el JSON, se lo solucion con QuickFix de Copilot
 
-5. el Problema B-02 fue resuelto con ayuda de la IA, algo del front no deja de mostrar el ID con numero pero segun los paraemtros del enunciado cumple con lo establecido
+5. El problema B-02 fue resuelto con ayuda de la IA. El endpoint puebla la
+   criatura con su ID y nombre, y el detalle del avistamiento muestra el nombre
+   relacionado.
 
-6. 
+6. El problema B-03 fue resuelto con ayuda de la IA y la causa fue identificada
+   en la validación del servicio. Los tipos se validan contra la lista permitida
+   y un valor como fantasma recibe 400; no se sustituye por otro tipo.
+
+7. El caso B-04 mostraba problemas porque el cambio del selector no disparaba
+   una nueva consulta. Ahora el filtro depende de la criatura seleccionada y
+   vuelve a mostrar todos los registros al elegir Todas.

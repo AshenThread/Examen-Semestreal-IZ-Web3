@@ -16,9 +16,9 @@
 - [X] Un GET después del rechazo conserva el último tipo válido.
 
 ## B-04
-- [ ] Cambiar el selector inicia la consulta y solo muestra registros asociados.
-- [ ] Se diferencian loading, error y empty; crear una criatura sin avistamientos permite probar vacío.
-- [ ] Volver a Todas restaura la lista sin actualización manual.
+- [X] Cambiar el selector inicia la consulta y solo muestra registros asociados.
+- [X] Se diferencian loading, error y empty; crear una criatura sin avistamientos permite probar vacío.
+- [X] Volver a Todas restaura la lista sin actualización manual.
 
 ## Recorrido integrado final
 1. Consultar y filtrar avistamientos por criatura.
