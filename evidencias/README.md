@@ -10,3 +10,7 @@ Gris: General e Installs
 
 2. La apliacion deja registrar una criatura y avistamiento de la misma de forma correcta
 
+3. El cambio fue realizado y el PUT ya permite editar un avistamiento, todo fue documentado en AUDITORIA.md
+
+4. Se hizo un cambio pequeño con IA de una funcion que iba a ser decapritada en el JSON, se lo solucion con QuickFix de Copilot
+

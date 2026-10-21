@@ -1,9 +1,9 @@
 # Verificación manual · Versión B
 
 ## B-01
-- [ ] El formulario guarda la edición con 200 y conserva lo no modificado.
-- [ ] GET y recarga confirman la nueva criatura y ubicación.
-- [ ] Una referencia inexistente por HTTP recibe 404 y conserva la asociación anterior.
+- [X] El formulario guarda la edición con 200 y conserva lo no modificado.
+- [X] GET y recarga confirman la nueva criatura y ubicación.
+- [X] Una referencia inexistente por HTTP recibe 404 y conserva la asociación anterior.
 
 ## B-02
 - [ ] El detalle muestra el nombre de la criatura relacionada.

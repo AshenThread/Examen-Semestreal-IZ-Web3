@@ -17,13 +17,13 @@ Sin embargo, el formulario React enviaba "criatura" al crear y "criaturaId" al e
 
 ### Cambio
 La corrección conceptualmente correcta es que creación y edición utilicen el mismo nombre de propiedad: 
-datos.criatura = form.criatura;
+datos.criatura = form.criatura; en (FormularioAvistamiento.tsx) linea 12
 
 ### Prueba
 Se volvio a editar un campo pequeño del avistamiento de tornado azul y ese lo gurado sin problema dando en colosa tras el PUT: {"id":"cb1a57b9-511d-4c22-843a-bbb0fea757c6","metodo":"PUT","ruta":"/6ad8e4f6c84654523f036464","status":200,"ms":551}
 
 ### Estado
-Resuelto / parcial / no resuelto. Si es parcial, qué falta:
+Resuleto y sin problemas
 
 ## B-02 · El detalle no identifica a la criatura
 ### Síntoma

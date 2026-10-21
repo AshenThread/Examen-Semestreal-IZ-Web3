@@ -2,7 +2,9 @@ import { Avistamiento } from "../modelos/Avistamiento.model";
 import { Criatura } from "../modelos/Criatura.model";
 import { ApiError } from "../apiError";
 import { cuerpo, idValido } from "../validacion";
+
 const campos = ["criatura", "testigo", "ubicacion", "descripcion", "fecha"];
+
 async function comprobarCriatura(id: string) {
   if (!(await Criatura.exists({ _id: idValido(id) })))
     throw new ApiError(404, "Criatura referenciada no encontrada");
@@ -15,7 +17,7 @@ export async function listar(criaturaId?: string) {
     .lean();
 }
 export async function obtener(id: string) {
-  const doc = await Avistamiento.findById(idValido(id));
+  const doc = await Avistamiento.findById(idValido(id)).populate("criatura");
   if (!doc) throw new ApiError(404, "Avistamiento no encontrado");
   return doc;
 }
