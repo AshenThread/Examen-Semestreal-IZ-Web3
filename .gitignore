@@ -5,5 +5,6 @@ dist/
 !.env.example
 *.log
 *.tsbuildinfo
+.DS_Store
 .private/
 credenciales/

@@ -58,10 +58,10 @@ La evaluación usa ese commit y esa copia recibida, no ediciones posteriores. Si
 [X] evidencias/ contiene capturas o respuestas sin secretos
 [X] npm run check pasa
 [X] npm run build pasa
-[X] git status no muestra cambios
-[X] se hizo push de la rama correcta
-[X] el ZIP se creó desde ese mismo HEAD
-[X] D2L contiene ZIP, código, versión, URL, rama y SHA completo
+[ ] git status no muestra cambios
+[ ] se hizo push de la rama correcta
+[ ] el ZIP se creó desde ese mismo HEAD
+[ ] D2L contiene ZIP, código, versión, URL, rama y SHA completo
 ```
 
 ## Guía visual rápida
