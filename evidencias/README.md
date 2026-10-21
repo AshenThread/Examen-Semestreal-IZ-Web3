@@ -8,3 +8,5 @@ Rojo: Backend
 Amarillo: Front
 Gris: General e Installs
 
+2. La apliacion deja registrar una criatura y avistamiento de la misma de forma correcta
+

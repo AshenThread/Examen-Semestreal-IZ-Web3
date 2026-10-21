@@ -24,3 +24,5 @@ export function queryTexto(value: unknown) {
   if (typeof value !== 'string') throw new ApiError(400, 'Filtro inválido');
   return value || undefined;
 }
+
+
