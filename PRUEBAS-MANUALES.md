@@ -6,14 +6,14 @@
 - [X] Una referencia inexistente por HTTP recibe 404 y conserva la asociación anterior.
 
 ## B-02
-- [ ] El detalle muestra el nombre de la criatura relacionada.
-- [ ] El endpoint y el tipo/uso del dato en React son coherentes.
-- [ ] Un id de avistamiento válido inexistente produce error comprensible sin pantalla en blanco.
+- [X] El detalle muestra el nombre de la criatura relacionada.
+- [X] El endpoint y el tipo/uso del dato en React son coherentes.
+- [X] Un id de avistamiento válido inexistente produce error comprensible sin pantalla en blanco.
 
 ## B-03
-- [ ] Un tipo válido como mitica se guarda con status 200.
-- [ ] El valor fantasma se rechaza con 400 y mensaje comprensible.
-- [ ] Un GET después del rechazo conserva el último tipo válido.
+- [X] Un tipo válido como mitica se guarda con status 200.
+- [X] El valor fantasma se rechaza con 400 y mensaje comprensible.
+- [X] Un GET después del rechazo conserva el último tipo válido.
 
 ## B-04
 - [ ] Cambiar el selector inicia la consulta y solo muestra registros asociados.

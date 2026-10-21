@@ -14,3 +14,6 @@ Gris: General e Installs
 
 4. Se hizo un cambio pequeño con IA de una funcion que iba a ser decapritada en el JSON, se lo solucion con QuickFix de Copilot
 
+5. el Problema B-02 fue resuelto con ayuda de la IA, algo del front no deja de mostrar el ID con numero pero segun los paraemtros del enunciado cumple con lo establecido
+
+6. 

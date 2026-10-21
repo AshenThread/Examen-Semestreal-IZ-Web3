@@ -102,3 +102,46 @@ recomendación de la IA y una corrección realmente implementada y comprobada.
   actualización.
 
 No se exige rechazar una sugerencia si todas fueron útiles, ni entregar conversaciones completas. No usar IA no reduce puntaje.
+
+### Corrección guiada de B-02
+
+- **Solicitud:** se pidió identificar y corregir B-02, porque el detalle de un
+  avistamiento mostraba el ID de la criatura o información incompleta en lugar
+  de su nombre.
+- **Diagnóstico:** el modelo `Avistamiento` contiene una referencia MongoDB a
+  `Criatura`. Aunque el frontend ya podía manejar una referencia poblada, el
+  servicio debía garantizar que el endpoint de detalle devolviera los datos
+  necesarios para identificarla.
+- **Decisión técnica:** se mantuvo el contrato `GET /api/avistamientos/:id` y
+  se ajustó `backend/src/services/avistamientos.service.ts` para usar
+  `populate("criatura", "_id nombre").lean()`. Así, la respuesta incluye el ID
+  para navegar a la ficha y el nombre para mostrarlo, sin enviar campos
+  innecesarios.
+- **Uso coherente en React:** `frontend/src/tipos.ts` mantiene la función
+  `nombreCriatura` para aceptar una criatura poblada, un ID o una referencia
+  faltante. `DetalleAvistamiento.tsx` muestra el nombre cuando está disponible,
+  conserva el enlace a la ficha y presenta el error del endpoint mediante
+  `role="alert"` si el avistamiento no existe.
+- **Verificación:** se comprobó que el caso semilla
+  `65a000000000000000000204` debe devolver 200 con
+  `criatura._id` y `criatura.nombre`, y que un ID válido inexistente devuelve
+  404 con `Avistamiento no encontrado`. También pasaron el chequeo y build del
+  frontend, el type-check focalizado del servicio backend y `git diff --check`.
+  El type-check completo del backend continúa bloqueado por una resolución de
+  módulo preexistente en `criaturas.controller.ts`, no relacionada con este
+  cambio.
+
+### Corrección guiada de B-03
+
+- **Solicitud:** se pidió corregir la aceptación de tipos de criatura
+  inválidos, especialmente `fantasma`, que podía terminar guardándose o
+  sustituyéndose por otro tipo.
+- **Diagnóstico:** el modelo declara un `enum`, pero el servicio confiaba solo
+  en la validación genérica del cuerpo y el `PUT` usaba
+  `findByIdAndUpdate` sin `runValidators: true`.
+- **Decisión técnica:** se reutilizó `TIPOS` como fuente única y se añadió una
+  validación explícita en `crear` y `actualizar`, devolviendo 400 con un
+  mensaje comprensible. También se activaron los validadores de Mongoose en
+  actualizaciones parciales.
+- **Verificación:** un tipo permitido como `mitica` conserva la respuesta 200;
+  `fantasma` recibe 400 y un GET posterior conserva el último tipo válido.

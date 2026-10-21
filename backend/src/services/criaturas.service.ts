@@ -3,6 +3,10 @@ import { Avistamiento } from '../modelos/Avistamiento.model';
 import { ApiError } from '../apiError';
 import { cuerpo, idValido } from '../validacion';
 const campos = ['nombre','tipo','habilidades','nivelPeligro','estado'];
+function validarTipo(tipo: unknown) {
+  if (tipo !== undefined && !(TIPOS as readonly string[]).includes(tipo as string))
+    throw new ApiError(400, 'Tipo de criatura inválido');
+}
 export async function listar(tipo?: string) {
   if (tipo && !(TIPOS as readonly string[]).includes(tipo)) throw new ApiError(400, 'Tipo de filtro inválido');
   return Criatura.find(tipo ? { tipo } : {}).sort({ nombre: 1, _id: 1 }).lean();
@@ -13,11 +17,18 @@ export async function obtener(id: string) {
   return doc;
 }
 export async function crear(body: unknown) {
-  return Criatura.create(cuerpo(body, campos, ['nombre','tipo','nivelPeligro']));
+  const datos = cuerpo(body, campos, ['nombre','tipo','nivelPeligro']);
+  validarTipo(datos.tipo);
+  return Criatura.create(datos);
 }
 export async function actualizar(id: string, body: unknown) {
   const cambios = cuerpo(body, campos);
-  const doc = await Criatura.findByIdAndUpdate(idValido(id), { $set: cambios }, { new: true });
+  validarTipo(cambios.tipo);
+  const doc = await Criatura.findByIdAndUpdate(
+    idValido(id),
+    { $set: cambios },
+    { new: true, runValidators: true },
+  );
   if (!doc) throw new ApiError(404, 'Criatura no encontrada');
   return doc;
 }

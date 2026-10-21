@@ -17,7 +17,9 @@ export async function listar(criaturaId?: string) {
     .lean();
 }
 export async function obtener(id: string) {
-  const doc = await Avistamiento.findById(idValido(id)).populate("criatura");
+  const doc = await Avistamiento.findById(idValido(id))
+    .populate("criatura", "_id nombre")
+    .lean();
   if (!doc) throw new ApiError(404, "Avistamiento no encontrado");
   return doc;
 }
